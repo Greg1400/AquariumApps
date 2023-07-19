@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "name": "Debug Aquarium",
+            "program": "${workspaceFolder:Aquarium}\\.build/debug/Aquarium",
+            "args": [],
+            "cwd": "${workspaceFolder:Aquarium}",
+            "preLaunchTask": "swift: Build Debug Aquarium"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "name": "Release Aquarium",
+            "program": "${workspaceFolder:Aquarium}\\.build/release/Aquarium",
+            "args": [],
+            "cwd": "${workspaceFolder:Aquarium}",
+            "preLaunchTask": "swift: Build Release Aquarium"
+        }
+    ]
+}
