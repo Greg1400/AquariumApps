@@ -1,7 +1,9 @@
 // Main.swift
 
 import Foundation
-import Aquarium.Models.Sources
+import Models
+import Controllers
+import Views
 
 // Point d'entrée principal de votre application
 func main() {
