@@ -19,12 +19,27 @@ let package = Package(
             name: "Aquarium",
             dependencies: [
                 .product(name: "Alamofire", package: "Alamofire"),
-                "Aquarium.Models"
-            ]
+                "Aquarium.Models",
+                "Aquarium.Controllers",
+                "Aquarium.Views"
+            ],
+            path: "Sources/Aquarium",
+            source: ["Main.swift"]
         ),
         .target(
             name: "Aquarium.Models",
+            dependencies: [],
             path: "Sources/Aquarium/Models"
+        ),
+        .target(
+            name: "Aquarium.Controllers",
+            dependencies: ["Aquarium.Models"],
+            path: "Sources/Aquarium/Controllers"
+        ),
+        .target(
+            name: "Aquarium.Views",
+            dependencies: ["Aquarium.Models"],
+            path: "Sources/Aquarium/Views"
         ),
         .testTarget(
             name: "AquariumTests",
