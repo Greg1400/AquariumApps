@@ -6,7 +6,7 @@ class WaterChangeController {
     let aquarium: Aquarium
     let bactoElixierDosage: Double = 20.0 // mL per 100L
     let clearWaterElixierDosage: Double = 20.0 // mL per 100L
-    
+    let nextWaterChangeDate: Date?
     init(aquarium: Aquarium) {
         self.aquarium = aquarium
     }
@@ -14,6 +14,11 @@ class WaterChangeController {
     func scheduleWaterChange() {
         print("Scheduling a water change...")
         // Code pour planifier le changement d'eau
+    let calendar = Calendar.current
+    let oneWeekFromNow = calendar.date(byAdding: .day, value: 7, to: Date())
+
+    nextWaterChangeDate = oneWeekFromNow
+
         // Demander à l'utilisateur le litrage de changement de l'eau
         print("Enter the water change capacity (in litters):")
         if let waterChangeCapacityString = readLine(), let waterChangeCapacity = Double(waterChangeCapacityString) {
@@ -33,5 +38,9 @@ class WaterChangeController {
         let bactoElixierDosageForCapacity = (bactoElixierDosage / 100.0) * totalCapacityInLiters
 
         ptrint("Dosage for Bacto Elixier : \(bactoElixierDosageForCapacity) mL")
+    }
+
+    func getNextWaterChangeDate() -> Date? {
+        return nextWaterChangeDate
     }
 }
